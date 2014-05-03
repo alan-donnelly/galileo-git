@@ -2,6 +2,12 @@ language: c
 compiler: 
  - gcc
 
+env: 
+  global: 
+  - secure: BeHQ65hN5TiUHrHT0wv/2izaf0GZkDGDicaYwSP2YbdtBVT8I3ejvkGSCoHLQwzjDXVzflKBQx8yNlQofJUXKY3Py2Y0iRNjIyHvUZtatxaxe0CrOEbeNCjyElAUjfd/lHVN4WER46sAWVfJQV9P0kcEw2UbgBIDMJ57qjYLDas=
+  - secure: aLDX1pnEb4n3pphR5Wof/LvfsM4ZksNaqnHvPAv38GqDm47nOGizrfxodQpYq6tsVn9yAcDJtaj5kfi1+EfHvNGUe70LKuc+t1ThS2/WfKTHtc6hCgZChYtQ3u4438oPuwQ18vPbB1+9/eqz36OoEamXe75D/KIJEsVJxpn+KMw=
+  - secure: CQK9KGcInMoZBRXtVkvYrdqZvXY8kdJ+fTE9Rv/iXzopfMkW3eNDS1QlavZZmZjUvPQy9nRdTicQJzVr9rmpMHNb35Cy35HBdJ4KhJoiKkaTlt/H64b0UOZAZhoie7R3fYd89VW3WXzHCsdW945jvXZjxzm+HXnLdHPSEMjOgz0=
+
 before_install: 
  - sudo apt-get install -y build-essential p7zip-full diffstat texinfo chrpath libssl-dev libcurl4-openssl-dev libexpat-dev gettext
 
@@ -12,12 +18,7 @@ script: make all
 
 after_success: 
  - tar -vczf git-1.8.1.2_travis.tar.gz *
- - 
  - chmod 600 .travis/deploy_key.pem
  - ssh-add .travis/deploy_key.pem
  - git remote add deploy DEPLOY_REPO_URI_GOES_HERE
  - git push deploy
-
-env: 
-  global: 
-    secure: yfvuRYFRz4X/esfxLanqgbg1XGUDaHaNQPV1X0fuFG5rMzDcFDZ4QQ9ZDpSZscqWZZhPMVAqB88x7lQmq9Br4EBcmdEezInESurFkEZNyRAhkd64gpCt5Njap/cnQpcJ5QNhjPrR14ne6ZdGh8LJKhcdmw6nLgIMVVcgZmNYMco=
