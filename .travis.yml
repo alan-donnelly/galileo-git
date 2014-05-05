@@ -1,0 +1,19 @@
+language: c
+compiler:
+ - gcc
+
+before_install: 
+ - sudo apt-get install -y build-essential p7zip-full diffstat texinfo chrpath libssl-dev libcurl4-openssl-dev libexpat-dev gettext
+ 
+install: 
+ - ./configure --without-tcl
+
+script: make all
+
+after_success:
+ - tar -vczf git-1.8.1.2_travis.tar.gz *
+ - chmod 600 .travis/deploy_key.pem # this key should have push access
+ - ssh-add .travis/deploy_key.pem
+ - git remote add deploy DEPLOY_REPO_URI_GOES_HERE
+ - git push deploy
+
