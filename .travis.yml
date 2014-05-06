@@ -14,7 +14,7 @@ before_install:
 install: 
  - ./configure --without-tcl
 
-script: make all
+script: make prefix=/usr/local all
 
 after_success: 
  - git remote set-url --push origin https://$GH_APP_TOKEN@github.com/alan-donnelly/git-1.8.1.2.git
@@ -22,6 +22,6 @@ after_success:
  - git config user.email alan.donnelly@gmail.com
  - git add -f *
  - git commit -a -m 'Adding git 1.8.1.2'
- - git tag -a 1.8.1.2 -m "Version 1.8.1.2"
+ - git tag -f -a 1.8.1.2 -m "Version 1.8.1.2"
  - git push origin 1.8.1.2
 
