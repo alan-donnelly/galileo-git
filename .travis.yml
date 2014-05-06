@@ -17,9 +17,9 @@ install:
 script: make all
 
 after_success: 
- - git remote set-url --push origin https://$GH_TOKEN@github.com/alan-donnelly/git-1.8.1.2.git
- - git config user.name $GIT_USER
- - git config user.email $GIT_EMAIL
+ - git remote set-url --push origin https://$GH_APP_TOKEN@github.com/alan-donnelly/git-1.8.1.2.git
+ - git config user.name alan-donnelly
+ - git config user.email alan.donnelly@gmail.com
  - git add -f *
  - git commit -a -m 'Adding git 1.8.1.2'
  - git tag -a 1.8.1.2 -m "Version 1.8.1.2"
