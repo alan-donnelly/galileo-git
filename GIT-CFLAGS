@@ -1,0 +1,1 @@
+gcc: -g -O2 -I. -pthread -DHAVE_PATHS_H -DHAVE_DEV_TTY -DXDL_FAST_HASH -DSHA1_HEADER='<openssl/sha.h>'  -DNO_STRLCPY -DSHELL_PATH='"/bin/sh"':

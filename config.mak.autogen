@@ -1,0 +1,79 @@
+# git Makefile configuration, included in main Makefile
+# config.mak.autogen.  Generated from config.mak.in by configure.
+
+CC = gcc
+CFLAGS = -g -O2
+CPPFLAGS = 
+LDFLAGS = 
+AR = ar
+TAR = tar
+DIFF = diff
+#INSTALL = @INSTALL@		# needs install-sh or install.sh in sources
+
+prefix = /usr/local
+exec_prefix = ${prefix}
+bindir = ${exec_prefix}/bin
+gitexecdir = ${exec_prefix}/libexec/git-core
+datarootdir = ${prefix}/share
+template_dir = ${datarootdir}/git-core/templates
+sysconfdir = ${prefix}/etc
+
+mandir = ${datarootdir}/man
+
+srcdir = .
+
+
+export exec_prefix mandir
+export srcdir VPATH
+
+AUTOCONFIGURED=YesPlease
+INLINE=
+CC_LD_DYNPATH=-Wl,-rpath,
+TCLTK_PATH=wish
+NEEDS_SSL_WITH_CRYPTO=
+NO_OPENSSL=
+NO_CURL=
+NO_EXPAT=
+NEEDS_LIBICONV=
+NO_ICONV=
+NO_DEFLATE_BOUND=
+NEEDS_SOCKET=
+NO_INET_NTOP=
+NO_INET_PTON=
+NO_HSTRERROR=
+NEEDS_RESOLV=
+NEEDS_LIBGEN=
+LIBC_CONTAINS_LIBINTL=YesPlease
+NO_GETTEXT=
+NO_SYS_SELECT_H=
+NO_SYS_POLL_H=
+NO_INTTYPES_H=
+OLD_ICONV=
+SOCKLEN_T=
+NO_D_INO_IN_DIRENT=
+NO_D_TYPE_IN_DIRENT=
+NO_SOCKADDR_STORAGE=
+NO_IPV6=
+NO_REGEX=
+FREAD_READS_DIRECTORIES=
+SNPRINTF_RETURNS_BOGUS=
+NO_LIBGEN_H=
+HAVE_PATHS_H=YesPlease
+HAVE_LIBCHARSET_H=
+CHARSET_LIB=
+NO_STRCASESTR=
+NO_STRTOK_R=
+NO_FNMATCH=
+NO_FNMATCH_CASEFOLD=
+NO_MEMMEM=
+NO_STRLCPY=YesPlease
+NO_UINTMAX_T=
+NO_STRTOUMAX=
+NO_SETENV=
+NO_UNSETENV=
+NO_MKDTEMP=
+NO_MKSTEMPS=
+NO_INITGROUPS=
+PTHREAD_CFLAGS=-pthread
+PTHREAD_LIBS=-pthread
+NO_PTHREADS=

@@ -1,0 +1,81 @@
+builtin/fast-export.o: builtin/fast-export.c builtin.h git-compat-util.h \
+ compat/bswap.h strbuf.h cache.h hash.h advice.h gettext.h convert.h \
+ commit.h object.h tree.h decorate.h notes.h string-list.h cache.h \
+ commit.h object.h tag.h diff.h tree-walk.h diffcore.h log-tree.h \
+ revision.h parse-options.h grep.h color.h kwset.h thread-utils.h \
+ userdiff.h notes-cache.h revision.h decorate.h string-list.h utf8.h \
+ parse-options.h quote.h
+
+builtin.h:
+
+git-compat-util.h:
+
+compat/bswap.h:
+
+strbuf.h:
+
+cache.h:
+
+hash.h:
+
+advice.h:
+
+gettext.h:
+
+convert.h:
+
+commit.h:
+
+object.h:
+
+tree.h:
+
+decorate.h:
+
+notes.h:
+
+string-list.h:
+
+cache.h:
+
+commit.h:
+
+object.h:
+
+tag.h:
+
+diff.h:
+
+tree-walk.h:
+
+diffcore.h:
+
+log-tree.h:
+
+revision.h:
+
+parse-options.h:
+
+grep.h:
+
+color.h:
+
+kwset.h:
+
+thread-utils.h:
+
+userdiff.h:
+
+notes-cache.h:
+
+revision.h:
+
+decorate.h:
+
+string-list.h:
+
+utf8.h:
+
+parse-options.h:
+
+quote.h:
