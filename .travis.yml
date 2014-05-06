@@ -17,8 +17,11 @@ install:
 script: make all
 
 after_success: 
- - tar -vczf git-1.8.1.2_travis.tar.gz *
- - git add *
+ - git remote set-url --push origin https://$GH_TOKEN@github.com/alan-donnelly/git-1.8.1.2.git
+ - git config user.name $GIT_USER
+ - git config user.email $GIT_EMAIL
+ - git add -f *
  - git commit -a -m 'Adding git 1.8.1.2'
- - git push
+ - git tag -a 1.8.1.2 -m "Version 1.8.1.2"
+ - git push origin 1.8.1.2
 
