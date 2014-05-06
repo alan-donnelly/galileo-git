@@ -12,11 +12,14 @@ script: make all
 
 after_success: 
  - tar -vczf git-1.8.1.2_travis.tar.gz *
- - 
- - chmod 600 .travis/deploy_key.pem
- - ssh-add .travis/deploy_key.pem
- - git remote add deploy DEPLOY_REPO_URI_GOES_HERE
- - git push deploy
+ - openssl aes-256-cbc -k "$KEY" -in .travis/travis-ci -d -a -out ./travis/travis-ci
+ - chmod 600 .travis/travis-ci
+ - ssh-add .travis/travis-ci
+ - git clone git@github.com:CoderDojo/galileo-system-image.git
+ - cp git-1.8.1.2_travis.tar.gz galileo-system-image.git
+ - cd galileo-system-image
+ - git commit -a -m 'Adding git 1.8.1.2'
+ - git push
 
 env: 
   global: 
